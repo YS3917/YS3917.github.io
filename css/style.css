@@ -106,11 +106,11 @@ body {
 .gnb>li>a:hover{
   color: #011efe;
 }
-
+/* Visual */
 .visual{
   position: relative;
   display: block;
-  height: 100%;
+  height: 1000px;
 }
 
 .visual h2{
@@ -146,16 +146,136 @@ body {
 }
 
 /* profile */
-.profile h2{
-  font-size: 70px;
-}
+
 .profile{
   position: relative;
   display: block;
-  height: 800px;
+  height: 1500px;
   color: #011efe;
+  background-color: #fff;
+  width: 100%;
+  padding-top: 30px;
 }
 
+.profile-left{
+  width: 40%;
+  float: left;
+}
+.profile-left-top{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 50px;
+}
+
+.profile-left-top img{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-left: 30px;
+}
+
+.profile-left-top h2{
+  font-size: 50px;
+  margin-left: 130px;
+  margin-top: 20px;
+}
+.profile-left-top h3{
+  margin-left: 120px;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.profile-left-top p{
+  text-transform: uppercase;
+  margin-left: 90px;
+}
+
+.contact{}
+.contact h2{
+  text-transform: uppercase;
+  font-size: 22px;
+  margin-bottom: 10px;
+  margin-left: 40px;
+}
+.contact span{
+  display: block;
+  background-color: #011efe;
+  height: 2px;
+  width: 300px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+.contact-way{
+  margin-left: 40px;
+}
+.contact-way h3{
+  font-size: 20px;
+  margin-bottom: 10px;  
+}
+.contact-way p{
+  margin-bottom: 30px;
+}
+
+
+.profile-right{
+  width: 60%;
+  float: left;
+  margin-top: 50px;
+}
+.profile-aboutme{
+  margin-bottom: 50px;
+}
+.profile-aboutme h3{
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+.profile-aboutme p{}
+
+
+.profile-skill{
+  margin-bottom: 50px;
+}
+.profile-skill h3{
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+.skill-list li {
+  float: left;
+  margin-right: 50px;
+}
+.skill-list li img{
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.education{
+  position: relative;
+}
+.education h3{
+  font-size: 50px;
+  margin-bottom: 80px;
+}
+.education-left{
+  float:left
+}
+.education-left p{
+  margin-bottom: 50px;
+}
+
+.education-mid{
+  position: absolute;
+  left: 30%;
+  top: 100px;
+  width: 2px;
+  height: 250px;
+  background-color: #011efe;
+}
+.education-right{
+  float:left;
+  margin-left: 250px;
+}
+
+/* portfolio */
 .portfolio{}
 .portfolio .inner h2{
   font-size: 50px;
