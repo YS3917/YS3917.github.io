@@ -1,5 +1,13 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+@font-face {
+  font-family: "GowunBatang-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
   margin: 0;
@@ -24,22 +32,22 @@ img {
 
 html {
   font-size: 16px;
-
 }
 
 body {
-  font-family: 'Noto Sans KR', Helvetica, '맑은 고딕', 'malgun gothic', 'Apple SD Gothic Neo', sans-serif;
+  font-family: "GowunBatang-Regular", "Noto Sans KR", Helvetica, "맑은 고딕",
+    "malgun gothic", "Apple SD Gothic Neo", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.4;
   letter-spacing: -0.64px;
   color: #444;
-  background-color: rgba(0,0,0, 0.1);
+  background-color: #fff;
 }
 
 /* 공통요소 */
 .clearfix::after {
-  content: '';
+  content: "";
   position: relative;
   display: block;
   width: 100%;
@@ -68,26 +76,28 @@ body {
   z-index: 9999;
   text-align: right;
 }
-.header h1{
+
+.header h1 {
   display: inline-block;
   position: absolute;
   left: 0;
   font-size: 0;
 }
-.header h1 a{
+
+.header h1 a {
   display: block;
   width: 100px;
   height: 80px;
-  background: url('../images/logo3.jpg')no-repeat center;
+  background: url("../images/logo3.jpg") no-repeat center;
   background-size: cover;
 }
+
 .gnb {
   position: relative;
   display: inline-block;
-  
 }
 
-.gnb>li {
+.gnb > li {
   position: relative;
   display: inline-block;
   white-space: nowrap;
@@ -95,59 +105,140 @@ body {
   margin: 0 10px;
 }
 
-.gnb>li>a {
+.gnb li a {
   display: block;
-  line-height: 80px;
+  position: relative;
+  line-height: 16px;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 500;
+  line-height: 80px;
+  color: #1f1f1f;
 }
 
-.gnb>li>a:hover{
-  color: #011efe;
+.gnb li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: #5a81fa;
+  bottom: 25px;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
 }
+
+.gnb li a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.gnb li a:hover {
+  color: #5a81fa;
+}
+
 /* Visual */
-.visual{
+.visual {
   position: relative;
   display: block;
-  height: 1000px;
+  height: 800px;
 }
 
-.visual h2{
-  position: relative;
-  top: 490px;
-  font-size: 100px;
+.visual h2 {
+  font-family: "Noto Sans KR";
+  position: absolute;
+  top: 65%;
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.visual h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px #011efe;
+}
+
+.visual h2:nth-child(2) {
   color: #011efe;
+  animation: animate 3s ease-in-out infinite;
 }
-.visual span{
-  position: relative;
-  top:400px;
-  left:650px;
-  font-size: 50px;
+
+@keyframes animate {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      15% 44%,
+      32% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0 60%,
+      16% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
 }
-.visual-img-box{
+
+.visual span {
+  position: absolute;
+  color: transparent;
+  font-family: "Noto Sans KR";
+  -webkit-text-stroke: 2px #011efe;
+  font-size: 44px;
+  font-weight: 500;
+  top: 70.5%;
+  right: 38.5%;
+}
+
+.visual-img-box {
+  padding-top: 300px;
   position: relative;
   top: -100px;
   left: 800px;
   width: 400px;
 }
-.visual-img-box h3{
-  font-size: 50px;
-  color: #011efe;
-  font-weight: 500;
-}
-.visual-img-box p{
-  font-size: 30px;
-  margin-bottom: 30px;
-}
-.visual-img-box img{
+
+.visual-img-box img {
   width: 400px;
   height: 500px;
 }
 
-/* profile */
+.visual-txt-box {
+  position: absolute;
+  right: 8%;
+  top: 10%;
+}
 
-.profile{
+.visual-txt-box p {
+  font-size: 40px;
+}
+
+.visual-txt-box p:nth-child(1) {
+  color: #011efe;
+}
+
+.visual-txt-box p:nth-child(2) {
+  color: #6a6e83;
+}
+
+/* profile */
+.profile {
   position: relative;
   display: block;
   height: 100%;
@@ -155,119 +246,231 @@ body {
   background-color: #fff;
   width: 100%;
   padding-top: 30px;
+  margin-bottom: 50px;
 }
 
-.profile-left{
+.profile-left {
   width: 40%;
   float: left;
 }
-.profile-left-top{
+
+.profile-left-top {
   width: 100%;
   height: 100%;
   margin-bottom: 50px;
 }
 
-.profile-left-top img{
+.profile-left-top img {
   width: 300px;
   height: 300px;
   border-radius: 50%;
   margin-left: 30px;
 }
 
-.profile-left-top h2{
-  font-size: 50px;
-  margin-left: 130px;
-  margin-top: 20px;
-}
-.profile-left-top h3{
-  margin-left: 120px;
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-.profile-left-top p{
+.profile-left-top p {
   text-transform: uppercase;
   margin-left: 95px;
 }
 
-.contact{}
-.contact h2{
-  text-transform: uppercase;
-  font-size: 22px;
-  margin-bottom: 10px;
-  margin-left: 40px;
-}
-.contact span{
+.infomation {
+  position: relative;
   display: block;
-  background-color: #011efe;
-  height: 2px;
-  width: 300px;
-  margin-left: 30px;
+}
+
+.infomation .my-name {
+  position: relative;
+  display: block;
+  width: 340px;
+  text-align: center;
+  font-size: 30px;
   margin-bottom: 30px;
 }
-.contact-way{
+
+.infomation-way {
+  position: relative;
+  display: block;
   margin-left: 40px;
 }
-.contact-way h3{
-  font-size: 20px;
-  margin-bottom: 10px;  
-}
-.contact-way p{
-  margin-bottom: 30px;
+
+.infomation-way p {
+  margin-bottom: 20px;
 }
 
+.infomation-way span {
+  font-size: 16px;
+  margin-right: 20px;
+}
 
-.profile-right{
+.infomation .education span {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.infomation-way .contact {
+  display: block;
+  position: relative;
+}
+
+.infomation-way .contact span {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.con-1,
+.con-2,
+.con-3 {
+  float: left;
+}
+
+.con-1 {
+  width: 30px;
+  height: 30px;
+  background: url("../images/kakaotalk.png");
+  background-size: cover;
+}
+
+.con-2 {
+  width: 30px;
+  height: 30px;
+  background: url("../images/googlemail.png");
+  background-size: cover;
+}
+
+.con-3 {
+  width: 30px;
+  height: 30px;
+  background: url("../images/github-blue.png");
+  background-size: cover;
+}
+
+.profile-right {
   width: 60%;
   float: left;
   margin-top: 50px;
 }
-.profile-aboutme{
+
+.profile-aboutme {
   margin-bottom: 50px;
 }
-.profile-aboutme h3{
+
+.profile-aboutme h3 {
   font-size: 50px;
-  margin-bottom: 30px;
-}
-.profile-aboutme p{}
-
-
-.profile-skill{
-  margin-bottom: 50px;
-}
-.profile-skill h3{
-  font-size: 50px;
-  margin-bottom: 30px;
-}
-.skill-list li {
-  float: left;
-  margin-right: 50px;
-}
-.skill-list li img{
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
-.education{
+.profile-aboutme p {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
+
+.profile-right-bottom {
   position: relative;
 }
-.education h3{
-  font-size: 50px;
-  margin-bottom: 80px;
+
+.profile-mbti {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
 }
 
+.profile-mbti h3 {
+  font-size: 50px;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
 
+.profile-mbti span {
+  font-size: 30px;
+  display: inline-block;
+}
 
+.profile-mbti p {
+  display: block;
+  font-size: 22px;
+  letter-spacing: 0.1rem;
+}
 
-/* portfolio */
-.portfolio{}
-.portfolio .inner h2{
+.profile-skill {
+  position: relative;
+  display: block;
+}
+
+.profile-skill h2 {
   font-size: 50px;
   color: #011efe;
+  margin-bottom: 30px;
 }
-.portfolio-cate{}
-.portfolio-cate h4{
+
+.profile-skill li {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.profile-skill p {
+  width: 50px;
+  height: 50px;
+  margin: 0 20px;
+}
+
+.html-icon {
+  background: url("../images/html-5.png");
+  background-size: cover;
+}
+
+.css-icon {
+  background: url("../images/CSS.png");
+  background-size: cover;
+}
+
+.js-icon {
+  background: url("../images/JS.png");
+  background-size: cover;
+}
+
+.jquery-icon {
+  background: url("../images/jquery.png");
+  background-size: cover;
+}
+
+.vue-icon {
+  background: url("../images/vue.png");
+  background-size: cover;
+}
+
+.sass-icon {
+  background: url("../images/scss.png");
+  background-size: cover;
+}
+
+.github-icon {
+  background: url("../images/github-blue.png");
+  background-size: cover;
+}
+
+/* portfolio */
+.portfolio {
+  position: relative;
+  display: block;
+  margin-bottom: 50px;
+}
+
+.portfolio .inner h2 {
+  font-size: 50px;
+  color: #011efe;
+  text-align: center;
+}
+
+.portfolio-cate {
+}
+
+.portfolio-cate h4 {
   font-size: 20px;
+  text-align: center;
 }
 
 .portfolio-list {
@@ -275,15 +478,18 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.portfolio-list > li{
+
+.portfolio-list > li {
   position: relative;
   margin-top: 50px;
   width: 350px;
   height: 400px;
-  background-color:#011efe;
+  background-color: #5a81fa;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.txt-box{
+.txt-box {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -291,40 +497,45 @@ body {
   text-align: center;
 }
 
-.txt-box h3{
+.txt-box h3 {
   color: #fff;
   font-size: 30px;
   margin-bottom: 20px;
   font-weight: 700;
 }
-.txt-box p{
+
+.txt-box p {
   color: #fff;
 }
 
-.img-box{
+.img-box {
   width: 100%;
   height: 400px;
 }
-.link-box{
+
+.link-box {
   position: absolute;
   left: 45px;
   bottom: 30px;
   display: none;
   width: 100%;
 }
-.link-box a{
+
+.link-box a {
   display: inline-block;
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #011efe;
+  background-color: #5a81fa;
   border: 1px solid #fff;
   margin-right: 10px;
 }
-.link-box a:last-child{
+
+.link-box a:last-child {
   margin-right: 0;
 }
-.link-box a span{
+
+.link-box a span {
   display: inline-block;
   width: 100%;
   line-height: 80px;
@@ -336,55 +547,117 @@ body {
 .img-box-2 img,
 .img-box-3 img,
 .img-box-4 img,
-.img-box-5 img{
+.img-box-5 img {
   width: 100%;
   height: 400px;
-  border:10px solid #011efe;
+  border: 10px solid #5a81fa;
+  display: none;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.list-1:hover .txt-box {
   display: none;
 }
 
-.list-1:hover .txt-box{
-  display: none;
-}
-.list-2:hover .txt-box{
-  display: none;
-}
-.list-3:hover .txt-box{
-  display: none;
-}
-.list-4:hover .txt-box{
-  display: none;
-}
-.list-5:hover .txt-box{
+.list-2:hover .txt-box {
   display: none;
 }
 
-.list-1:hover .img-box-1 > img{
-  display: block;
+.list-3:hover .txt-box {
+  display: none;
 }
-.list-2:hover .img-box-2 > img{
+
+.list-4:hover .txt-box {
+  display: none;
+}
+
+.list-5:hover .txt-box {
+  display: none;
+}
+
+.list-1:hover .img-box-1 > img {
   display: block;
 }
 
-.list-3:hover .img-box-3 > img{
+.list-2:hover .img-box-2 > img {
   display: block;
 }
 
-.list-4:hover .img-box-4 > img{
+.list-3:hover .img-box-3 > img {
   display: block;
 }
 
-.list-5:hover .img-box-5 > img{
+.list-4:hover .img-box-4 > img {
   display: block;
 }
 
-.portfolio-list li:hover .link-box{
+.list-5:hover .img-box-5 > img {
   display: block;
 }
 
-.link-box a:hover{
+.portfolio-list li:hover .link-box {
+  display: block;
+}
+
+.link-box a:hover {
   background-color: #fff;
+  border: 3px solid #5a81fa;
 }
-.link-box a span:hover{
+
+.link-box a span:hover {
   color: #011efe;
+}
+
+/* life */
+.life {
+  position: relative;
+  display: block;
+}
+
+.life h2 {
+  font-size: 50px;
+  color: #5a81fa;
+  text-transform: uppercase;
+}
+
+/* vision */
+
+.vision {
+  position: relative;
+  display: block;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+.vision h2 {
+  margin-top: 50px;
+  margin-bottom: 60px;
+  font-size: 50px;
+  color: #5a81fa;
+  text-transform: uppercase;
+}
+
+.year-1,
+.year-5,
+.year-10 {
+  width: 30%;
+  height: 200px;
+  border: 1px solid #011efe;
+  float: left;
+}
+
+.year-1,
+.year-5 {
+  margin-right: 5%;
+}
+
+/* footer */
+
+.footer {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100px;
+  background-color: #5a81fa;
 }
