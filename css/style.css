@@ -456,7 +456,7 @@ body {
 .portfolio {
   position: relative;
   display: block;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .portfolio .inner h2 {
@@ -615,10 +615,50 @@ body {
   display: block;
 }
 
+.life .inner {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: repeat(2, 300px);
+  gap: 20px;
+}
+
 .life h2 {
+  position: absolute;
+  left: 19%;
+  top: -80px;
   font-size: 50px;
   color: #5a81fa;
   text-transform: uppercase;
+}
+
+.life .inner div {
+  border: 1px solid #011efe;
+}
+
+.life-1 {
+  grid-row: 1/4;
+  background: url("../images/eoco1.png") no-repeat center;
+  background-size: cover;
+}
+
+.life-2 {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  background: url("../images/food.jpg") no-repeat 0px -50px;
+  background-size: cover;
+}
+
+.life-3 {
+  grid-row: 1/4;
+  background: url("../images/cafe.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.life-4 {
+  grid-column: 2/3;
+  grid-row: 2/4;
+  background: url("../images/eoco.png") no-repeat center;
+  background-size: cover;
 }
 
 /* vision */
@@ -641,10 +681,25 @@ body {
 .year-1,
 .year-5,
 .year-10 {
+  position: relative;
+  display: block;
   width: 30%;
   height: 200px;
   border: 1px solid #011efe;
   float: left;
+  padding: 30px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1f1f1f;
+  line-height: 27px;
+}
+.vision h3 {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 25px;
+  font-weight: 700;
 }
 
 .year-1,
