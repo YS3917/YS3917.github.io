@@ -1,3 +1,3 @@
-window.onload = function(){
-    AOS.init();
-}
+window.onload = function () {
+  AOS.init();
+};
