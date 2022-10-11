@@ -155,15 +155,24 @@ body {
   position: relative;
   display: block;
   height: 800px;
+  width: 100%;
+  background: url("../images/pexels-andreea-ch-1166643.jpg") no-repeat center;
+  background-size: cover;
+  margin-bottom: 50px;
 }
-
-.visual-main-txt-box {
+.visual .inner {
+  position: relative;
+  display: block;
+}
+.visual .inner .visual-main-txt-box {
   position: absolute;
-  top: 47%;
+  top: 250px;
+  display: block;
 }
 
 .visual-main-txt-box h2 {
   font-size: 50px;
+  color: #1f1f1f;
   margin-bottom: 30px;
 }
 .visual-main-txt-box .visual-main-name {
@@ -174,8 +183,9 @@ body {
   font-size: 22px;
   line-height: 35px;
   font-weight: 400;
+  color: #1f1f1f;
 }
-
+/* 
 .visual-img-box {
   padding-top: 300px;
   position: relative;
@@ -187,23 +197,12 @@ body {
 .visual-img-box img {
   width: 400px;
   height: 500px;
-}
+} */
 
 .visual-sub-txt-box {
   position: absolute;
   right: 8%;
   top: 10%;
-}
-
-.visual-sub-txt-box p {
-  font-size: 40px;
-}
-.visual-sub-txt-box p:nth-child(1) {
-  color: #011efe;
-}
-
-.visual-sub-txt-box p:nth-child(2) {
-  color: #6a6e83;
 }
 
 /* portfolio */
@@ -289,9 +288,8 @@ body {
   margin-top: 50px;
   width: 350px;
   height: 400px;
-  /* background-color: #5a81fa; */
   border-radius: 5px;
-  /* overflow: hidden; */
+  overflow: hidden;
 
   box-shadow: 5px 1px 5px rgb(0 0 0 / 10%);
 }
@@ -307,8 +305,6 @@ body {
   transform: translateY(0px);
   transition: all 0.5s;
   z-index: 1;
-}
-.list-7::before {
   opacity: 0.7;
 }
 
@@ -358,8 +354,8 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #5a81fa;
-  border: 1px solid #fff;
+  background-color: #fff;
+  border: 1px solid #5a81fa;
   margin-right: 10px;
 }
 
@@ -372,7 +368,7 @@ body {
   width: 100%;
   line-height: 80px;
   text-align: center;
-  color: #fff;
+  color: #5a81fa;
 }
 
 .img-box-1 img,
@@ -428,12 +424,12 @@ body {
 }
 
 .link-box a:hover {
-  background-color: #fff;
-  border: 3px solid #5a81fa;
+  background-color: #5a81fa;
+  border: 3px solid #fff;
 }
 
 .link-box a span:hover {
-  color: #011efe;
+  color: #fff;
 }
 
 /* profile */
@@ -449,14 +445,18 @@ body {
 }
 
 .profile-left {
-  width: 36%;
+  width: 30%;
+  height: 100%;
+  margin-right: 6%;
   float: left;
+  background-color: #abf0ff;
+  border-radius: 0px 0px 200px 200px;
 }
 
 .profile-left-top {
   width: 100%;
   height: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .profile-left-top img {
@@ -480,12 +480,16 @@ body {
   position: relative;
   display: block;
   width: 340px;
-  text-indent: 35px;
+  text-indent: 95px;
   color: #011efe;
   font-size: 30px;
   margin-bottom: 30px;
   font-weight: 700;
   text-shadow: 5px 1px 5px rgb(0 0 0 / 10%);
+}
+.infomation .my-name span {
+  margin-left: 10px;
+  font-size: 23px;
 }
 
 .infomation-way {
@@ -498,34 +502,48 @@ body {
   margin-bottom: 20px;
 }
 
-.infomation-way span {
-  font-size: 16px;
-  margin-right: 20px;
+.infomation-way .info-way-left {
+  position: relative;
+  display: inline-block;
+  width: 100px;
 }
 
 .info-desc {
   font-weight: 500;
 }
-
-.infomation .education span {
+.infomation .education {
+  position: relative;
   display: block;
+}
+.infomation .education .edu-1 {
+  display: inline-block;
   margin-bottom: 20px;
+}
+.infomation .education .edu-2 {
+  display: block;
+  margin-left: 104px;
 }
 
 .infomation-way .contact {
-  display: block;
   position: relative;
+  display: inline-block;
+  margin-bottom: 100px;
 }
 
 .infomation-way .contact span {
-  display: block;
-  margin-bottom: 20px;
+  float: left;
 }
-
+.contact-icon-box {
+  float: right;
+  padding-right: 20px;
+}
 .con-1,
 .con-2,
-.con-3 {
+.con-3,
+.con-4 {
+  display: block;
   float: left;
+  margin-right: 20px;
 }
 
 .con-1 {
@@ -548,6 +566,12 @@ body {
   background: url("../images/github-blue.png");
   background-size: cover;
 }
+.con-4 {
+  width: 30px;
+  height: 30px;
+  background: url("../images/pdf.png");
+  background-size: cover;
+}
 
 .profile-right {
   width: 64%;
@@ -558,7 +582,7 @@ body {
 .profile-right h3 {
   color: #011efe;
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-transform: uppercase;
   font-weight: 700;
   text-align: left;
@@ -569,27 +593,19 @@ body {
   margin-bottom: 50px;
 }
 
+.profile-aboutme .pro-aboutme-txt1 {
+  margin-bottom: 30px;
+}
+
 .profile-aboutme p {
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.1rem;
   color: #333;
 }
-
-.profile-aboutme p b {
-  font-weight: 700;
+.profile-aboutme p .pro-aboutme-txt1-blue {
   color: #011efe;
-  font-size: 20px;
-  text-shadow: 5px 1px 5px rgb(0 0 0 / 10%);
-}
-
-.b-name {
-  font-size: 40px !important;
-}
-
-.b-black {
-  color: #333 !important;
-  font-size: 16px !important;
+  font-weight: 700;
 }
 
 .profile-right-bottom {
@@ -600,6 +616,25 @@ body {
   position: relative;
   display: block;
   margin-bottom: 30px;
+}
+.mbti-mini-box {
+  position: relative;
+  display: block;
+}
+.mbti-mini-list {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+}
+.mbti-mini-list li {
+  position: relative;
+  display: block;
+  float: left;
+  margin-right: 20px;
+  background: #5a81fa;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 10px;
 }
 
 .profile-mbti p {
@@ -614,7 +649,11 @@ body {
   display: block;
   margin-bottom: 80px;
 }
-
+.profile-skill ul {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+}
 .profile-skill li {
   position: relative;
   display: block;
@@ -625,6 +664,16 @@ body {
   width: 50px;
   height: 50px;
   margin: 0 20px;
+}
+.profile-skill .skill-txt-box {
+  position: relative;
+  display: block;
+}
+
+.profile-skill .skill-txt-box span {
+  position: relative;
+  display: block;
+  line-height: 27px;
 }
 
 .html-icon {
@@ -683,7 +732,7 @@ body {
 
 .life-1 {
   grid-row: 1/4;
-  background: url("../images/eoco1.png") no-repeat center;
+  background: url("../images/star.jpg") no-repeat -80px center;
   background-size: cover;
 }
 
@@ -703,7 +752,7 @@ body {
 .life-4 {
   grid-column: 2/3;
   grid-row: 2/4;
-  background: url("../images/eoco.png") no-repeat center;
+  background: url("../images/walk.jpg") no-repeat center -225px;
   background-size: cover;
 }
 
@@ -722,7 +771,7 @@ body {
   color: #5a81fa;
   text-transform: uppercase;
   text-align: left;
-  padding-bottom: 15px;
+  padding-bottom: 25px;
   text-shadow: 5px 1px 5px rgb(0 0 0 / 10%);
 }
 
@@ -740,11 +789,11 @@ body {
   width: 32%;
   border: 1px solid #011efe;
   float: left;
-  padding: 20px 20px;
+  padding: 20px 20px 30px 20px;
   font-size: 14px;
   font-weight: 300;
   color: #1f1f1f;
-  line-height: 27px;
+  line-height: 19px;
 }
 
 /* footer */
@@ -753,6 +802,42 @@ body {
   position: relative;
   display: block;
   width: 100%;
-  height: 100px;
+  height: 200px;
   background-color: #5a81fa;
+}
+
+.footer p {
+  color: #fff;
+  text-align: center;
+  line-height: 180px;
+}
+.footer-contact-icon {
+  position: absolute;
+  top: 70%;
+  left: 43%;
+  display: block;
+}
+
+.footer-contact-icon li {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-right: 20px;
+}
+
+.footer-ka {
+  background: url("../images/kakaotalk.png") no-repeat center;
+  background-size: cover;
+}
+.footer-mail {
+  background: url("../images/footer-gmail.png") no-repeat center;
+  background-size: cover;
+}
+.footer-git {
+  background: url("../images/gitblack.png") no-repeat center;
+  background-size: cover;
+}
+.footer-pdf {
+  background: url("../images/pdf.png") no-repeat center;
+  background-size: cover;
 }
