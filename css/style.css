@@ -170,6 +170,13 @@ body {
 .gnb li a:hover {
   color: #5a81fa;
 }
+.gnb-li-a-active {
+  color: #5a81fa !important;
+}
+.gnb-li-a-active::before {
+  transform-origin: left !important;
+  transform: scaleX(1) !important;
+}
 
 /* Visual */
 .visual {

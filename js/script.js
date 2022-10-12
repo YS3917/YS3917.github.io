@@ -22,14 +22,6 @@ window.onload = function () {
     studyVue.removeClass("portfolio-menu-active");
   });
 
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 200) {
-      $(".go-top").fadeIn();
-    } else {
-      $(".go-top").fadeOut();
-    }
-  });
-
   $(".go-top").click(function () {
     $("html, body").animate(
       {
@@ -37,5 +29,73 @@ window.onload = function () {
       },
       700
     );
+  });
+
+  let gnbA = $(".gnb a");
+  let goTop = $(".go-top");
+  goTop.removeClass("go-top-show");
+  new Waypoint({
+    element: $(".visual"),
+    handler: function (direction) {
+      if (direction == "down") {
+        gnbA.removeClass("gnb-li-a-active");
+        gnbA.eq(0).addClass("gnb-li-a-active");
+      } else if (direction == "up") {
+        // gnbA.eq(0).removeClass("gnb-li-a-active");
+      }
+    },
+    offset: "30%",
+  });
+
+  new Waypoint({
+    element: $(".portfolio"),
+    handler: function (direction) {
+      gnbA.removeClass("gnb-li-a-active");
+      if (direction == "down") {
+        gnbA.eq(1).addClass("gnb-li-a-active");
+        goTop.addClass("go-top-show");
+      } else if (direction == "up") {
+        gnbA.eq(0).addClass("gnb-li-a-active");
+        goTop.removeClass("go-top-show");
+      }
+    },
+    offset: "30%",
+  });
+
+  new Waypoint({
+    element: $(".profile"),
+    handler: function (direction) {
+      gnbA.removeClass("gnb-li-a-active");
+      if (direction == "down") {
+        gnbA.eq(2).addClass("gnb-li-a-active");
+      } else if (direction == "up") {
+        gnbA.eq(1).addClass("gnb-li-a-active");
+      }
+    },
+    offset: "30%",
+  });
+  new Waypoint({
+    element: $(".life"),
+    handler: function (direction) {
+      gnbA.removeClass("gnb-li-a-active");
+      if (direction == "down") {
+        gnbA.eq(3).addClass("gnb-li-a-active");
+      } else if (direction == "up") {
+        gnbA.eq(2).addClass("gnb-li-a-active");
+      }
+    },
+    offset: "30%",
+  });
+  new Waypoint({
+    element: $(".vision"),
+    handler: function (direction) {
+      gnbA.removeClass("gnb-li-a-active");
+      if (direction == "down") {
+        gnbA.eq(4).addClass("gnb-li-a-active");
+      } else if (direction == "up") {
+        gnbA.eq(3).addClass("gnb-li-a-active");
+      }
+    },
+    offset: "80%",
   });
 };
