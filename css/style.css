@@ -186,7 +186,6 @@ body {
   width: 100%;
   background: url("../images/pexels-andreea-ch-1166643.jpg") no-repeat center;
   background-size: cover;
-  margin-bottom: 50px;
 }
 .visual .inner {
   position: relative;
@@ -225,6 +224,7 @@ body {
   position: relative;
   display: block;
   margin-bottom: 100px;
+  padding-top: 100px;
 }
 
 .portfolio .inner h2 {
@@ -662,7 +662,6 @@ body {
 .profile-skill {
   position: relative;
   display: block;
-  margin-bottom: 80px;
 }
 .profile-skill ul {
   position: relative;
@@ -725,6 +724,7 @@ body {
 .life {
   position: relative;
   display: block;
+  padding-top: 80px;
   margin-bottom: 80px;
 }
 
