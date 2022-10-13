@@ -716,11 +716,6 @@ body {
   background-size: cover;
 }
 
-.sass-icon {
-  background: url("../images/scss.png");
-  background-size: cover;
-}
-
 .github-icon {
   background: url("../images/github-blue.png");
   background-size: cover;
